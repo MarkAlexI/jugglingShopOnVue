@@ -1,0 +1,20 @@
+{
+    "name": "jugglingShopOnVue",
+    "version": "1.0.0",
+    "description": "Site-shop on Vue.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["e-shop", "Vue 3"],
+    "author": "MarkAlexI",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^18.0.6",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "node-fetch": "^3.2.6",
+        "vite": "^4.0.4",
+        "vue": "^3.2.45",
+        "vue-router": "^4.1.6"
+    }
+}
