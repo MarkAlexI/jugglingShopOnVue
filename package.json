@@ -6,12 +6,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": ["e-shop", "Vue 3"],
+    "keywords": [
+        "e-shop",
+        "Vue 3"
+    ],
     "author": "MarkAlexI",
     "license": "MIT",
     "dependencies": {
         "@types/node": "^18.0.6",
         "@vitejs/plugin-vue": "^4.0.0",
+        "json-server": "^0.17.2",
         "node-fetch": "^3.2.6",
         "vite": "^4.0.4",
         "vue": "^3.2.45",

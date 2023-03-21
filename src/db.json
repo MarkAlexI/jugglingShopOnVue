@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "image": "1.jpg",
+      "name": "1",
+      "price": 100,
+      "article": "K1",
+      "available": true,
+      "category": "Ball"
+    }
+  ]
+}
