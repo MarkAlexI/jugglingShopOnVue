@@ -1,10 +1,14 @@
 <template>
-  <h1>Catalog</h1>
-  <ul>
-    <li v-for="i in 10">
-      <CatalogItem :index="i" />
-    </li>
-  </ul>
+  <div class="catalog">
+    <h1>Catalog</h1>
+    <div class="catalog__list">
+      <CatalogItem
+        v-for="i in 10"
+        :index="i"
+        :key="i"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -12,7 +16,13 @@
 </script>
 
 <style>
-  h1 {
-    color: pink;
+  .catalog {
+    padding: 6px;
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 </style>

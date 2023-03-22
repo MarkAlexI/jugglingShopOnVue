@@ -1,16 +1,9 @@
 <template>
-  <div>
-    This is app.
-    <HomePage />
-    <MainWrapper />
-    <Catalog />
-  </div>
+  <MainWrapper />
 </template>
 
 <script setup>
-  import HomePage from './views/HomePage.vue';
   import MainWrapper from './components/MainWrapper.vue';
-  import Catalog from './components/Catalog.vue';
 </script>
 
 <style scoped>

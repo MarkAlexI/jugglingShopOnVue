@@ -1,6 +1,6 @@
 {
     "name": "jugglingShopOnVue",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Site-shop on Vue.",
     "main": "index.js",
     "scripts": {
@@ -20,5 +20,13 @@
         "vite": "^4.0.4",
         "vue": "^3.2.45",
         "vue-router": "^4.1.6"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "cssnano": "5.1.15",
+        "postcss": "^8.4.21",
+        "postcss-import": "15.1.0",
+        "postcss-nested": "^6.0.1",
+        "postcss-simple-vars": "^7.0.1"
     }
 }
