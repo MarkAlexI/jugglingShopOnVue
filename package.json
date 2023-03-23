@@ -1,10 +1,13 @@
 {
     "name": "jugglingShopOnVue",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Site-shop on Vue.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview",
+      "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
         "e-shop",
