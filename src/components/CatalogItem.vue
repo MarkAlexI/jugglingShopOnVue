@@ -17,6 +17,7 @@
     </p>
     <button
       class="catalog-item__add_to_cart_btn btn"
+      @click="sendDataToParent"
     >
       Add to cart
     </button>
@@ -27,6 +28,12 @@
   const props = defineProps({
     product_data: Object
   });
+
+  const emit = defineEmits(['sendArticle']);
+
+  const sendDataToParent = () => {
+    emit('sendArticle', props.product_data.article);
+  };
 </script>
 
 <style>

@@ -6,6 +6,7 @@
         v-for="product in products"
         :product_data="product"
         :key="product.article"
+        @sendArticle="handleEvent"
       />
     </div>
   </div>
@@ -14,6 +15,10 @@
 <script setup>
   import { ref } from 'vue';
   import CatalogItem from './CatalogItem.vue';
+
+  const handleEvent = (data) => {
+    console.log(data);
+  };
 
   const products = ref([
     {
