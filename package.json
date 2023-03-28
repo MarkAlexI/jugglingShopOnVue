@@ -1,12 +1,12 @@
 {
     "name": "jugglingShopOnVue",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Site-shop on Vue.",
     "main": "index.js",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview",
+        "serve": "vite preview",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -16,14 +16,12 @@
     "author": "MarkAlexI",
     "license": "MIT",
     "dependencies": {
-        "@types/node": "^18.0.6",
-        "@vitejs/plugin-vue": "^4.0.0",
-        "json-server": "^0.17.2",
-        "node-fetch": "^3.2.6",
-        "pinia": "^2.0.33",
         "vite": "^4.0.4",
         "vue": "^3.2.45",
-        "vue-router": "^4.1.6"
+        "vue-router": "^4.1.6",
+        "@types/node": "^18.0.6",
+        "@vitejs/plugin-vue": "^4.0.0",
+        "pinia": "^2.0.33"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.14",
