@@ -52,14 +52,25 @@ export const useShopStore = defineStore({
       "available": true,
       "category": "Ball"
     }
-  ]
+  ],
+    cart: []
   }),
   getters: {
     getProducts: (state) => {
       return state.products;
+    },
+    getCart: (state) => {
+      return state.cart;
     }
   }, 
   actions: {
-    
+    addToCart(x) {
+      this.cart = [...this.cart, x];
+      console.log(this.cart.length);
+    },
+    removeFromCart(index) {
+      this.cart.splice(index, 1);
+      console.log(`Delete: ` + index);
+    }
   }
 });
