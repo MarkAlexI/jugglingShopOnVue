@@ -1,6 +1,6 @@
 {
     "name": "jugglingShopOnVue",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "description": "Site-shop on Vue.",
     "main": "index.js",
     "scripts": {

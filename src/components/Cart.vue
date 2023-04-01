@@ -6,7 +6,7 @@
       </div>
     </router-link>
     <h1>Cart</h1>
-    <p v-if="!cart_data">There are no products...</p>
+    <p v-if="!cart_data.length">There are no products...</p>
     <CartItem
       v-for="(item, index) in cart_data"
       :key="item.article"
@@ -21,20 +21,9 @@
   import CartItem from './CartItem.vue';
   import { useShopStore } from '../stores/store.js';
 
-  const props = defineProps({
-    cart_data: {
-      type: Array,
-      default() {
-        return [];
-      }
-    }
-  });
-
   const store = useShopStore();
   const removeFromCart = computed(() => store.removeFromCart);
-  const deleteFromCart = (index) => {
-    
-  };
+  const cart_data = computed(() => store.cart);
 </script>
 
 <style>

@@ -64,8 +64,21 @@ export const useShopStore = defineStore({
     }
   }, 
   actions: {
-    addToCart(x) {
-      this.cart = [...this.cart, x];
+    addToCart(product) {
+      if (this.cart.length) {
+        let isProductExist = false;
+        this.cart.map(function (item) {
+          if (item.article === product.article) {
+            isProductExist = true;
+          }
+        });
+        if (!isProductExist) {
+          this.cart.push(product);
+        }
+      } else {
+        this.cart.push(product);
+      }
+      
       console.log(this.cart.length);
     },
     removeFromCart(index) {
