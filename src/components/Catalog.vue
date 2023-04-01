@@ -1,5 +1,10 @@
 <template>
   <div class="catalog">
+    <router-link :to="{name: 'cart', params: {cart_data: cart}}">
+      <div class="catalog__link_to_cart">
+        Cart: {{ cart.length }}
+      </div>
+    </router-link>
     <h1>Catalog</h1>
     <div class="catalog__list">
       <CatalogItem
@@ -19,6 +24,7 @@
 
   const store = useShopStore();
   const products = computed(() => store.products);
+  const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);
 </script>
 
@@ -30,6 +36,13 @@
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
+    }
+    &__link_to_cart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 16px;
+      border: solid 1px grey;
     }
   }
 </style>
