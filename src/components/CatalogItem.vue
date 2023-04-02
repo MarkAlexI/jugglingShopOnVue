@@ -13,7 +13,7 @@
     <p
       class="catalog-item__price"
     >
-      Price: {{ props.product_data.price }} HRN
+      Price: {{ props.product_data.price }} $
     </p>
     <button
       class="catalog-item__add_to_cart_btn btn"

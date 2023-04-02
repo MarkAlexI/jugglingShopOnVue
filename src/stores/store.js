@@ -84,6 +84,14 @@ export const useShopStore = defineStore({
     removeFromCart(index) {
       this.cart.splice(index, 1);
       console.log(`Delete: ` + index);
+    },
+    decrementCartItem(index) {
+      if (this.cart[index]['quantity'] > 1) {
+        this.cart[index]['quantity']--;
+      }
+    },
+    incrementCartItem(index) {
+      this.cart[index]['quantity']++;
     }
   }
 });

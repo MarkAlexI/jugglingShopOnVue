@@ -12,7 +12,17 @@
     </div>
     <div class="cart-item__quantity">
       <p>Qty:</p>
-      <p>{{cart_item_data.quantity}}</p>
+      <span>
+        <span
+          class="quantity__btn"
+          @click="decrementItem"
+        >-</span>
+        {{cart_item_data.quantity}}
+        <span
+          class="quantity__btn"
+          @click="incrementItem"
+        >+</span>
+      </span>
     </div>
     <button @click="deleteFromCart">Delete</button>
   </div>
@@ -30,12 +40,24 @@
     }
   });
 
-  const emit = defineEmits(['deleteFromCart']);
+  const emit = defineEmits([
+    'deleteFromCart',
+    'decrementItem',
+    'incrementItem'
+  ]);
 
   const deleteFromCart = () => {
     emit('deleteFromCart');
   };
 
+  const decrementItem = () => {
+    emit('decrementItem');
+  };
+
+  const incrementItem = () => {
+    emit('incrementItem');
+  };
+  
   onMounted(() => {
     props.cart_item_data['quantity'] = 1;
   });
@@ -51,5 +73,9 @@
     &__image {
       max-width: 50px;
     }
+  }
+
+  .quantity__btn {
+    cursor: pointer;
   }
 </style>
