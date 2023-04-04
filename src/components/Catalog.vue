@@ -6,6 +6,7 @@
       </div>
     </router-link>
     <h1>Catalog</h1>
+    <Select />
     <div class="catalog__list">
       <CatalogItem
         v-for="product in products"
@@ -21,6 +22,7 @@
   import { computed } from 'vue';
   import { useShopStore } from '../stores/store.js';
   import CatalogItem from './CatalogItem.vue';
+  import Select from './Select.vue';
 
   const store = useShopStore();
   const products = computed(() => store.products);
