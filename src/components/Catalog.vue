@@ -6,11 +6,35 @@
       </div>
     </router-link>
     <h1>Catalog</h1>
-    <Select
-      :selected="selected"
-      :options="categories.list"
-      @select="sortByCategories"
-    />
+    <div class="filters">
+      <Select
+        :selected="selected"
+        :options="categories.list"
+        @select="sortByCategories"
+      />
+      <div class="range-slider">
+        <input
+          type ="range"
+          min="0"
+          max="500"
+          step="10"
+          v-model.number="minPrice"
+          @change="setRangeSlider"
+        >
+        <input
+          type ="range"
+          min="0"
+          max="500"
+          step="10"
+          v-model.number="maxPrice"
+          @change="setRangeSlider"
+        >
+      </div>
+      <div class="range-values">
+        <p>Min: {{ minPrice }}</p>
+        <p>Max: {{ maxPrice }}</p>
+      </div>
+    </div>
     <div class="catalog__list">
       <CatalogItem
         v-for="product in filteredProducts"
@@ -43,19 +67,27 @@
     list: []
   });
 
+  const minPrice = ref(0);
+  const maxPrice = ref(500);
+
   const store = useShopStore();
   const products = computed(() => store.products);
   const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);
 
   const sortByCategories = (category) => {
-    sortedProducts.list = [];
-    products.value.map((item) => {
-      if (item.category === category.name) {
-        sortedProducts.list.push(item);
-      }
-    });console.log(sortedProducts.list.length);
     selected.value = category.name;
+    sortedProducts.list = [...products.value];
+    sortedProducts.list = sortedProducts.list.filter((el) => {
+      return el.price >= minPrice.value &&
+             el.price <= maxPrice.value;
+    });console.log(category);
+    if (category) {
+      sortedProducts.list = sortedProducts.list.filter((item) => {
+        selected.value = category.name;
+        return item.category === category.name;
+      });
+    }
   };
 
   const filteredProducts = computed(() => {
@@ -65,6 +97,13 @@
       return products.value;
     }
   });
+
+  const setRangeSlider = () => {
+    if (minPrice.value > maxPrice.value) {
+      [minPrice.value, maxPrice.value] = [maxPrice.value, minPrice.value];
+    }
+    sortByCategories();
+  };
 </script>
 
 <style>
@@ -83,5 +122,30 @@
       padding: 16px;
       border: solid 1px grey;
     }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .range-slider {
+    width: 13.5rem;
+    margin: auto 1rem;
+    text-align: center;
+    position: relative;
+    & input {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    top: 2px;
+    margin-top: -7px;
   }
 </style>
