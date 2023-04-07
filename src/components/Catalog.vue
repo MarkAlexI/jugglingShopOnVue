@@ -81,7 +81,7 @@
     sortedProducts.list = sortedProducts.list.filter((el) => {
       return el.price >= minPrice.value &&
              el.price <= maxPrice.value;
-    });console.log(category);
+    });
     if (category) {
       sortedProducts.list = sortedProducts.list.filter((item) => {
         selected.value = category.name;

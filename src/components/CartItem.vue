@@ -69,7 +69,8 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 8px 0 #e0e0e0;
+    padding: 0 1rem;
+    box-shadow: 0 0 .5rem 0 #e0e0e0;
     &__image {
       max-width: 50px;
     }
