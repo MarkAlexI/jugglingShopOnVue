@@ -41,6 +41,7 @@
         :product_data="product"
         :key="product.article"
         @addToCart="addToCart(product)"
+        @productClick="productClick"
       />
     </div>
   </div>
@@ -49,6 +50,7 @@
 <script setup>
   import { ref, reactive, computed } from 'vue';
   import { useShopStore } from '../stores/store.js';
+  import { useRouter, useRoute } from 'vue-router';
   import CatalogItem from './CatalogItem.vue';
   import Select from './Select.vue';
 
@@ -74,6 +76,16 @@
   const products = computed(() => store.products);
   const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);
+
+  const router = useRouter();
+  const productClick = (article) => {
+    router.push({
+      name: 'product',
+      query: {
+        'product': article
+      }
+    });
+  };
 
   const sortByCategories = (category) => {
     selected.value = category.name;

@@ -34,6 +34,7 @@
       class="catalog-item__image"
       :src="'../src/assets/images/' + product_data.image"
       alt="img"
+      @click="productClick"
     >
     <p
       class="catalog-item__name"
@@ -78,10 +79,17 @@
     isInfoPopupVisible.value = false;
   };
   
-  const emit = defineEmits(['addToCart']);
+  const emit = defineEmits([
+    'addToCart',
+    'productClick'
+  ]);
 
   const addToCart = () => {
     emit('addToCart', props.product_data);
+  };
+
+  const productClick = () => {
+    emit('productClick', props.product_data.article);
   };
 </script>
 
