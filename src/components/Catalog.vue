@@ -10,6 +10,7 @@
       <Select
         :selected="selected"
         :options="categories.list"
+        :isExpanded="isDesktop"
         @select="sortByCategories"
       />
       <div class="range-slider">
@@ -73,6 +74,7 @@
   const maxPrice = ref(500);
 
   const store = useShopStore();
+  const isDesktop = computed(() => store.isDesktop);
   const products = computed(() => store.products);
   const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);

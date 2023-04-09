@@ -42,7 +42,7 @@
   .product-page {
     display: flex;
     flex-direction: column;
-    juctify-content: center;
+    justify-content: center;
     align-items: center;
   }
 </style>

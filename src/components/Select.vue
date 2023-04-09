@@ -72,7 +72,7 @@
     border: solid 1px #aeaeae;
     padding: .5rem;
   }
-  .v-select p {
+  .select p {
     margin: 0;
   }
 

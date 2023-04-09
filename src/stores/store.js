@@ -3,6 +3,8 @@ import { defineStore } from 'pinia';
 export const useShopStore = defineStore({
   id: 'shop',
   state: () => ({
+    isMobile: false,
+    isDesktop: true,
     products: [
     {
       "image": "1.jpg",
@@ -53,9 +55,15 @@ export const useShopStore = defineStore({
       "category": "Ball"
     }
   ],
-    cart: []
+  cart: []
   }),
   getters: {
+    getIsMobile: (state) => {
+      return state.isMobile;
+    },
+    getIsDesktop: (state) => {
+      return state.isDesktop;
+    },
     getProducts: (state) => {
       return state.products;
     },
@@ -64,6 +72,14 @@ export const useShopStore = defineStore({
     }
   }, 
   actions: {
+    switchMobile() {
+      this.isMobile = true;
+      this.isDesktop = false;
+    },
+    switchDesktop() {
+      this.isMobile = false;
+      this.isDesktop = true;
+    },
     addToCart(product) {
       if (this.cart.length) {
         let isProductExist = false;
@@ -78,12 +94,9 @@ export const useShopStore = defineStore({
       } else {
         this.cart.push(product);
       }
-      
-      console.log(this.cart.length);
     },
     removeFromCart(index) {
       this.cart.splice(index, 1);
-      console.log(`Delete: ` + index);
     },
     decrementCartItem(index) {
       if (this.cart[index]['quantity'] > 1) {
