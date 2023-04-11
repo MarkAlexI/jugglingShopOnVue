@@ -49,9 +49,9 @@
 </template>
 
 <script setup>
-  import { ref, reactive, computed } from 'vue';
+  import { ref, reactive, computed, watch, onMounted } from 'vue';
   import { useShopStore } from '../stores/store.js';
-  import { useRouter, useRoute } from 'vue-router';
+  import { useRouter } from 'vue-router';
   import CatalogItem from './CatalogItem.vue';
   import Select from './Select.vue';
 
@@ -75,6 +75,7 @@
 
   const store = useShopStore();
   const isDesktop = computed(() => store.isDesktop);
+  const searchValue = computed(() => store.getSearchValue);
   const products = computed(() => store.products);
   const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);
@@ -118,6 +119,23 @@
     }
     sortByCategories();
   };
+
+  const sortProductsBySearchValue = (value) => {
+    sortedProducts.list = [...products.value];
+    if (value) {
+      sortedProducts.list = sortedProducts.list.filter((el) => {
+        return el.name.toLowerCase().includes(value.toLowerCase());
+      });
+    } else {
+      sortedProducts.list = products.value;
+    }
+  };
+
+  watch(searchValue, (newValue, oldValue) => sortProductsBySearchValue(newValue));
+  
+  onMounted(() => {
+    sortProductsBySearchValue(searchValue.value);
+  });
 </script>
 
 <style>
@@ -131,9 +149,9 @@
     }
     &__link_to_cart {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 16px;
+      top: 6rem;
+      right: .65rem;
+      padding: 1rem;
       border: solid 1px grey;
     }
   }

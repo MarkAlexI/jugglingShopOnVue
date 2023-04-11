@@ -5,6 +5,7 @@ export const useShopStore = defineStore({
   state: () => ({
     isMobile: false,
     isDesktop: true,
+    searchValue: '',
     products: [
     {
       "image": "1.jpg",
@@ -64,6 +65,9 @@ export const useShopStore = defineStore({
     getIsDesktop: (state) => {
       return state.isDesktop;
     },
+    getSearchValue: (state) => {
+      return state.searchValue;
+    },
     getProducts: (state) => {
       return state.products;
     },
@@ -79,6 +83,9 @@ export const useShopStore = defineStore({
     switchDesktop() {
       this.isMobile = false;
       this.isDesktop = true;
+    },
+    setSearchValue(value) {
+      this.searchValue = value;
     },
     addToCart(product) {
       if (this.cart.length) {

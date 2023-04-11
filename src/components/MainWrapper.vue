@@ -1,5 +1,6 @@
 <template>
   <div class="main-wrapper">
+    <MainHeader />
     <router-view v-slot="{ Component }">
       <keep-alive>
         <component :is="Component" />
@@ -9,7 +10,7 @@
 </template>
 
 <script setup>
-
+  import MainHeader from './MainHeader.vue';
 </script>
 
 <style>

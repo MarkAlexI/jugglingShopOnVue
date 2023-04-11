@@ -30,7 +30,7 @@
     let result = {};
     products.value.map((el) => {
       if (el.article === route.query.product) {
-        result= el;
+        result = el;
       }
     });
     
@@ -40,6 +40,7 @@
 
 <style>
   .product-page {
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

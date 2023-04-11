@@ -86,7 +86,7 @@
   .popup {
     padding: 1rem;
     position: fixed;
-    top: 3rem;
+    top: 8rem;
     width: 40rem;
     background: white;
     box-shadow: 0 0 1rem 0 #e7e7e7;

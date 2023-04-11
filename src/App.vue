@@ -22,6 +22,9 @@
   });
 </script>
 
-<style scoped>
-
+<style>
+  #app {
+    text-align: center;
+    margin-top: 5rem;
+  }
 </style>
