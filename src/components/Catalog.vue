@@ -1,5 +1,8 @@
 <template>
   <div class="catalog">
+    <Notification
+      :messages="messages"
+    />
     <router-link :to="{name: 'cart'}">
       <div class="catalog__link_to_cart">
         Cart: {{ cart.length }}
@@ -41,7 +44,7 @@
         v-for="product in filteredProducts"
         :product_data="product"
         :key="product.article"
-        @addToCart="addToCart(product)"
+        @addToCart="addToCartWithNotification(product)"
         @productClick="productClick"
       />
     </div>
@@ -54,7 +57,10 @@
   import { useRouter } from 'vue-router';
   import CatalogItem from './CatalogItem.vue';
   import Select from './Select.vue';
+  import Notification from './Notification.vue';
 
+  const messages = ref([]);
+  
   const categories = reactive({
       list: [
         { name: 'All', value: 'all' },
@@ -79,6 +85,15 @@
   const products = computed(() => store.products);
   const cart = computed(() => store.cart);
   const addToCart = computed(() => store.addToCart);
+
+  const addToCartWithNotification = (product) => {
+    addToCart.value(product);
+    messages.value.unshift({
+      name: 'Product added to cart',
+      icon: 'success',
+      id: Date.now.toLocaleString(),
+    });
+  };
 
   const router = useRouter();
   const productClick = (article) => {
