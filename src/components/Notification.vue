@@ -69,7 +69,7 @@
     position: fixed;
     top: 7rem;
     right: 1rem;
-    z-index: 10;
+    z-index: 20;
     & messages_list {
       display: flex;
       flex-direction: column-reverse;

@@ -14,6 +14,11 @@
     >
       Add to cart
     </button>
+    <p>
+      <router-link :to="{name: 'catalog'}">
+        to Catalog
+      </router-link>
+    </p>
   </div>
 </template>
 

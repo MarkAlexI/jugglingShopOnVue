@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   
   const props = defineProps({
     popupTitle: {
@@ -62,11 +62,16 @@
   };
 
   onMounted(() => {
+    document.body.style.overflow = 'hidden';
     document.addEventListener('click', (item) => {
       if (item.target === popup_wrapper.value) {
         closePopup();
       }
     });
+  });
+
+  onUnmounted(() => {
+    document.body.style.overflow = '';
   });
 </script>
 
@@ -76,11 +81,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 10;
   }
   
   .popup {
@@ -90,7 +96,7 @@
     width: 40rem;
     background: white;
     box-shadow: 0 0 1rem 0 #e7e7e7;
-    z-index: 5;
+    z-index: 55;
     &__header, &__footer {
       display: flex;
       justify-content: space-between;
