@@ -2,7 +2,7 @@
   <div class="cart-item">
     <img
       class="cart-item__image"
-      :src="'../src/assets/images/' + cart_item_data.image"
+      :src="'../../src/assets/images/' + cart_item_data.image"
       alt="img"
     >
     <div class="cart-item__info">

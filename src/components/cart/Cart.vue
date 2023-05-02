@@ -25,7 +25,7 @@
 <script setup>
   import { computed } from 'vue';
   import CartItem from './CartItem.vue';
-  import { useShopStore } from '../stores/store.js';
+  import { useShopStore } from '../../stores/store.js';
 
   const store = useShopStore();
   const removeFromCart = computed(() => store.removeFromCart);

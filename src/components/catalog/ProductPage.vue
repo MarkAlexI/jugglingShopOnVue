@@ -2,7 +2,7 @@
   <div class="product-page">
     <img
       class="catalog-item__image"
-      :src="'../src/assets/images/' + product.image"
+      :src="'../../src/assets/images/' + product.image"
       alt="img"
     >
     <p>Product name: {{ product.name }}</p>
@@ -24,7 +24,7 @@
 
 <script setup>
   import { computed } from 'vue';
-  import { useShopStore } from '../stores/store.js';
+  import { useShopStore } from '../../stores/store.js';
   import { useRoute } from 'vue-router';
 
   const route = useRoute();

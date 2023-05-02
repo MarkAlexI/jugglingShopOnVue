@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link :to="{name: 'mainPage'}">
-      <img src="../assets/images/2.jpg" alt="logo.jpg">
+      <img src="../../assets/images/2.jpg" alt="logo.jpg">
     </router-link>
     <div class="search-field" role="search">
       <input
@@ -27,7 +27,7 @@
 
 <script setup>
   import { ref, computed } from 'vue';
-  import { useShopStore } from '../stores/store.js';
+  import { useShopStore } from '../../stores/store.js';
   import { useRouter, useRoute } from 'vue-router';
 
   const store = useShopStore();

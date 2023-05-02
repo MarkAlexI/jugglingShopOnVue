@@ -5,7 +5,7 @@
 <script setup>
   import { computed, onMounted } from 'vue';
   import { useShopStore } from './stores/store.js';
-  import MainWrapper from './components/MainWrapper.vue';
+  import MainWrapper from './components/popup/MainWrapper.vue';
 
   const store = useShopStore();
   const switchMobile = computed(() => store.switchMobile);

@@ -53,11 +53,11 @@
 
 <script setup>
   import { ref, reactive, computed, watch, onMounted } from 'vue';
-  import { useShopStore } from '../stores/store.js';
+  import { useShopStore } from '../../stores/store.js';
   import { useRouter } from 'vue-router';
   import CatalogItem from './CatalogItem.vue';
-  import Select from './Select.vue';
-  import Notification from './Notification.vue';
+  import Select from '../popup/Select.vue';
+  import Notification from '../notifications/Notification.vue';
 
   const messages = ref([]);
   

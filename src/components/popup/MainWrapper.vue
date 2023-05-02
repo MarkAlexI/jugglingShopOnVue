@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-  import MainHeader from './MainHeader.vue';
+  import MainHeader from '../layouts/MainHeader.vue';
 </script>
 
 <style>

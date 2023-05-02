@@ -9,7 +9,7 @@
     >
       <img
         class="catalog-item__image"
-        :src="'../src/assets/images/' + product_data.image"
+        :src="'../../src/assets/images/' + product_data.image"
         alt="img"
       >
       <div class="catalog-item__popup">
@@ -32,7 +32,7 @@
     </Popup>
     <img
       class="catalog-item__image"
-      :src="'../src/assets/images/' + product_data.image"
+      :src="'../../src/assets/images/' + product_data.image"
       alt="img"
       @click="productClick"
     >
@@ -63,7 +63,7 @@
 
 <script setup>
   import { ref } from 'vue';
-  import Popup from './Popup.vue';
+  import Popup from '../popup/Popup.vue';
   
   const props = defineProps({
     product_data: Object
@@ -94,7 +94,7 @@
 </script>
 
 <style>
-  @import "../assets/styles/_variables.css";
+  @import "../../assets/styles/_variables.css";
 
   .catalog-item {
     flex-basis: 25%;

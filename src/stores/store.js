@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia';
+import { getters } from './getters/getters.js';
+import { actions } from './actions/actions.js';
 
 export const useShopStore = defineStore({
   id: 'shop',
@@ -58,60 +60,6 @@ export const useShopStore = defineStore({
   ],
   cart: []
   }),
-  getters: {
-    getIsMobile: (state) => {
-      return state.isMobile;
-    },
-    getIsDesktop: (state) => {
-      return state.isDesktop;
-    },
-    getSearchValue: (state) => {
-      return state.searchValue;
-    },
-    getProducts: (state) => {
-      return state.products;
-    },
-    getCart: (state) => {
-      return state.cart;
-    }
-  }, 
-  actions: {
-    switchMobile() {
-      this.isMobile = true;
-      this.isDesktop = false;
-    },
-    switchDesktop() {
-      this.isMobile = false;
-      this.isDesktop = true;
-    },
-    setSearchValue(value) {
-      this.searchValue = value;
-    },
-    addToCart(product) {
-      if (this.cart.length) {
-        let isProductExist = false;
-        this.cart.map(function (item) {
-          if (item.article === product.article) {
-            isProductExist = true;
-          }
-        });
-        if (!isProductExist) {
-          this.cart.push(product);
-        }
-      } else {
-        this.cart.push(product);
-      }
-    },
-    removeFromCart(index) {
-      this.cart.splice(index, 1);
-    },
-    decrementCartItem(index) {
-      if (this.cart[index]['quantity'] > 1) {
-        this.cart[index]['quantity']--;
-      }
-    },
-    incrementCartItem(index) {
-      this.cart[index]['quantity']++;
-    }
-  }
+  getters,
+  actions
 });
