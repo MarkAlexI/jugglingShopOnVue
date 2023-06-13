@@ -41,6 +41,8 @@
     
     return result;
   });
+
+  const addToCart = computed(() => store.addToCart(product.value));
 </script>
 
 <style>
