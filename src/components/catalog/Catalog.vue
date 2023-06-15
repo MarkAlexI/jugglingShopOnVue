@@ -106,7 +106,7 @@
   };
 
   const sortByCategories = (category) => {
-    selected.value = category.name;
+    if (category) selected.value = category.name;
     sortedProducts.list = [...products.value];
     sortedProducts.list = sortedProducts.list.filter((el) => {
       return el.price >= minPrice.value &&
