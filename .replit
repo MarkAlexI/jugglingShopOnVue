@@ -3,6 +3,7 @@ entrypoint = "./src/App.vue"
 run = ["vite", "--host"]
 
 hidden = [".config"]
+modules = ["nodejs-18:v3-20230608-f4cd419"]
 
 [[hints]]
 regex = "Error \\[ERR_REQUIRE_ESM\\]"
@@ -77,3 +78,8 @@ pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
 
 [languages.javascript.languageServer]
 start = "typescript-language-server --stdio"
+
+[deployment]
+run = ["node", "index.js"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
