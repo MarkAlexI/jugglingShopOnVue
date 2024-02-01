@@ -2,7 +2,7 @@
   <div class="product-page">
     <img
       class="catalog-item__image"
-      :src="'../../src/assets/images/' + product.image"
+      :src="'../../../public/' + product.image"
       alt="img"
     >
     <p>Product name: {{ product.name }}</p>
