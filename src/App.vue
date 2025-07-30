@@ -3,6 +3,7 @@
 </template>
 
 <script setup>
+  import { useRouter } from 'vue-router';
   import { computed, onMounted } from 'vue';
   import { useShopStore } from './stores/store.js';
   import MainWrapper from './components/popup/MainWrapper.vue';
@@ -19,6 +20,16 @@
         ? switchDesktop.value()
         : switchMobile.value();
     });
+
+    const router = useRouter();
+    const path = localStorage.getItem('path');
+
+    if (path) {
+      localStorage.removeItem('path');
+      router.push('/' + path);
+    } else {
+      router.push({ path: '/' });
+    }
   });
 </script>
 

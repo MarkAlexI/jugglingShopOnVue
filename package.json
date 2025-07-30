@@ -1,6 +1,6 @@
 {
-    "name": "jugglingShopOnVue",
-    "version": "1.15.5",
+    "name": "jugglingshoponvue",
+    "version": "1.19.5",
     "description": "Site-shop on Vue.",
     "main": "index.js",
     "scripts": {
@@ -11,9 +11,10 @@
     },
     "keywords": [
         "e-shop",
-        "Vue 3"
+        "Vue 3",
+        "Pinia"
     ],
-    "author": "MarkAlexI",
+    "author": "markalexi",
     "license": "MIT",
     "dependencies": {
         "@types/node": "^18.19.121",

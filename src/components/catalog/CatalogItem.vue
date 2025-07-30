@@ -9,7 +9,7 @@
     >
       <img
         class="catalog-item__image"
-        :src="'../../src/assets/images/' + product_data.image"
+        :src="'../../../public/' + product_data.image"
         alt="img"
       >
       <div class="catalog-item__popup">

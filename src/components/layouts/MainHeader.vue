@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link :to="{name: 'mainPage'}">
-      <img src="../../assets/images/2.jpg" alt="logo.jpg">
+      <img src="../../../public/2.jpg" alt="logo.jpg">
     </router-link>
     <div class="search-field" role="search">
       <input
