@@ -83,3 +83,12 @@ start = "typescript-language-server --stdio"
 run = ["node", "index.js"]
 deploymentTarget = "cloudrun"
 ignorePorts = false
+
+[[ports]]
+localPort = 5173
+externalPort = 8080
+exposeLocalhost = true
+
+[[ports]]
+localPort = 5174
+externalPort = 80
