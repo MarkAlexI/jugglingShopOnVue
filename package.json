@@ -17,11 +17,11 @@
     "author": "markalexi",
     "license": "MIT",
     "dependencies": {
-        "@types/node": "^18.19.121",
+        "@types/node": "^18.19.130",
         "@vitejs/plugin-vue": "^5.2.4",
         "pinia": "^2.3.1",
-        "vite": "^6.4.1",
-        "vue": "^3.2.45",
+        "vite": "^6.3.5",
+        "vue": "^3.5.26",
         "vue-router": "^4.5.1"
     },
     "devDependencies": {
